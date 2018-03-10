@@ -1,9 +1,16 @@
 import smtplib
 
+#Comments
 content = ""
+
+#Sender's email
 email = ""
+
+#Password to sender's email
 password = ""
-receiver = ""
+
+#receiver email
+receiver= ""
 
 mail = smtplib.SMTP("smtp.gmail.com", 587)
 
