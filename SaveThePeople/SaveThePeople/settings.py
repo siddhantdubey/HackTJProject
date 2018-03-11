@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'ALittleGift',
       'leaflet',
+      'django_google_maps',
+      'geoposition',
 
 
 ]
@@ -122,11 +124,12 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+GOOGLE_MAPS_API_KEY = ' AIzaSyBj3cHJ5lR5Aig-zLpR0dWAZjPPkXzYzNg '
+GEOPOSITION_GOOGLE_MAPS_API_KEY = ' AIzaSyBj3cHJ5lR5Aig-zLpR0dWAZjPPkXzYzNg '
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/templates/'
+STATIC_URL = '/Static/'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'

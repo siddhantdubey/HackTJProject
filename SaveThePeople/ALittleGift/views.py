@@ -10,7 +10,7 @@ from . import models
 class PostCreateView(CreateView):
     model = models.Request
     template_name = 'request_new.html'
-    fields = ['message', 'author']
+    fields = ['message', 'author', 'location']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -23,6 +23,8 @@ class PostListView(ListView):
 class PostDetailView(DetailView):
     model = models.Request
     template_name = 'request_detail.html'
+
+
 
 class PostUpdateView(UpdateView):
     model = models.Request
