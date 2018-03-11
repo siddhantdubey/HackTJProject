@@ -22,12 +22,8 @@
     <div id="form">
       <table>
       <tr><td>Name:</td> <td><input type='text' id='name'/> </td> </tr>
-      <tr><td>Address:</td> <td><input type='text' id='address'/> </td> </tr>
-      <tr><td>Type:</td> <td><select id='type'> +
-                 <option value='bar' SELECTED>bar</option>
-                 <option value='restaurant'>restaurant</option>
-                 </select> </td></tr>
-                 <tr><td></td><td><input type='button' value='Save' onclick='saveData()'/></td></tr>
+      <tr><td>Description:</td> <td><input type='text' id='description'/> </td> </tr>
+	  <tr><td></td><td><input type='button' value='Save' onclick='saveData()'/></td></tr>
       </table>
     </div>
     <div id="message">Location saved</div>
@@ -38,10 +34,10 @@
       var messagewindow;
 
       function initMap() {
-        var california = {lat: 37.4419, lng: -122.1419};
+        var california = {lat: 38.8183519, lng: -77.1687977};
         map = new google.maps.Map(document.getElementById('map'), {
           center: california,
-          zoom: 13
+          zoom: 15
         });
 
         infowindow = new google.maps.InfoWindow({
@@ -67,11 +63,10 @@
 
       function saveData() {
         var name = escape(document.getElementById('name').value);
-        var address = escape(document.getElementById('address').value);
-        var type = document.getElementById('type').value;
+        var description = escape(document.getElementById('description').value);
         var latlng = marker.getPosition();
-        var url = 'http://localhost:9888/Maps/phpsqlinfo_addrow.php?name=' + name + '&address=' + address +
-                  '&type=' + type + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
+        var url = 'phpsqlinfo_addrow.php?name=' + name + '&description=' + description +
+                  '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
 
         downloadUrl(url, function(data, responseCode) {
 
