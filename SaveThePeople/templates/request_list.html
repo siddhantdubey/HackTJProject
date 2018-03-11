@@ -4,6 +4,9 @@
 
 {% block content %}
   {% for post in object_list %}
+
+  
+
     <div class="card">
       <div class="card-header">
         <span class="font-weight-bold">{{ post.author }}</span> &middot; <span class="text-muted">{{ post.date }}</span>
@@ -12,8 +15,6 @@
         <p>{{ post.message }}</p>
         <p>City: {{ post.city }} </p>
         <p>Longitude and Latitude {{ post.location }}</p>
-
-
       </div>
       <div class="card-footer text-center text-muted">
         <a href="{% url 'request_edit' post.pk %}">Edit/View</a> |

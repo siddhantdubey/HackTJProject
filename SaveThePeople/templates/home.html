@@ -1,21 +1,30 @@
 
-
 {% extends 'base.html' %}
+{%load static%}
+
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
+
 <div class="jumbotron">
   <body>
     <h1 class="display-4">A Little Gift</h1>
-    {% load static %}
-    <img src="{% static "Static/logo.jpeg" %}" alt="My image"/>
+
   <p class="lead">A tool to help the less fortunate</p>
   <p class="lead">Sometimes while we're in our cars waiting at the red light, we see that man, holding a cardborad poster, pleading for a little bit of help.
 					just a little help. Or that woman who lives on the streets who can't afford a new pair of shoes because she
 					has to feed her children. At <i>A Little Gift</i>, you can help your brothers and sisters in need. Maybe give then that new blanket they need
 to last the winter. Or that new pair of shoes. If you can give a little gift, you can make a big difference.</p>
   <p class="lead">
+  <h3>How it works</h3>
+  <p class="lead">
+      A person, the donor or the requester signs up for an account and logins in. Next they click one of two things,
+      submit new request or view current requests. If they choose to submit a request they need to fill out what they or someone
+      else needs, the last known location of the person who was in need as well as whoever submitted the request.
+      When they view current requests, the donors have to view it first and check out the location and needs. Once they are done with delivering
+      the items to the person in need they click Fulfill and that removes the request from the system.
+  </p>
     <a class="btn btn-primary btn-lg" href="{% url 'request_list' %}" role="button">View All Requests</a>
   </p>
 

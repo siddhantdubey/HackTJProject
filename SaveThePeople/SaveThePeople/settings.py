@@ -129,8 +129,8 @@ GEOPOSITION_GOOGLE_MAPS_API_KEY = ' AIzaSyBj3cHJ5lR5Aig-zLpR0dWAZjPPkXzYzNg '
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/Static/'
-
+STATIC_URL = '/static/'
+STATIC_ROOT = '/home/siddhant/HackTJProject/SaveThePeople/static'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
@@ -147,3 +147,5 @@ GEOPOSITION_MARKER_OPTIONS = {
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
 }
+
+MEDIA_ROOT = '/media'
