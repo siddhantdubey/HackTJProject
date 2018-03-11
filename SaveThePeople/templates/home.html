@@ -8,8 +8,13 @@
 <div class="jumbotron">
   <body>
     <h1 class="display-4">A Little Gift</h1>
-  <img src="/home/siddhant/HackTJProject/SaveThePeople/templates/HackTJ Logo.png" alt="A Little Gift Logo">
+    {% load static %}
+    <img src="{% static "templates/logo.jpeg" %}" alt="logo"/>
   <p class="lead">A tool to help the less fortunate</p>
+  <p class="lead">Sometimes while we're in our cars waiting at the red light, we see that man, holding a cardborad poster, pleading for a little bit of help.
+					just a little help. Or that woman who lives on the streets who can't afford a new pair of shoes because she
+					has to feed her children. At <i>A Little Gift</i>, you can help your brothers and sisters in need. Maybe give then that new blanket they need
+to last the winter. Or that new pair of shoes. If you can give a little gift, you can make a big difference.</p>
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="{% url 'request_list' %}" role="button">View All Requests</a>
   </p>

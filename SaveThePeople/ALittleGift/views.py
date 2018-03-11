@@ -12,6 +12,9 @@ class PostCreateView(CreateView):
     template_name = 'request_new.html'
     fields = ['message', 'author']
 
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 class PostListView(ListView):
     model = models.Request

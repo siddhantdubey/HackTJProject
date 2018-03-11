@@ -11,9 +11,8 @@ class Dogooders(models.Model):
     last_name = models.CharField(max_length=3000000)
 
 class Request(models.Model):
-    message = models.CharField(max_length=30000000)
+    message = models.CharField(max_length=30000)
     date = models.DateTimeField(auto_now_add=True)
-
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
