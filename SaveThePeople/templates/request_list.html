@@ -9,11 +9,15 @@
         <span class="font-weight-bold">{{ post.author }}</span> &middot; <span class="text-muted">{{ post.date }}</span>
       </div>
       <div class="card-body">
-        {{ post.message }}
+        <p>{{ post.message }}</p>
+        <p>City: {{ post.city }} </p>
+        <p>Longitude and Latitude {{ post.location }}</p>
+
+
       </div>
       <div class="card-footer text-center text-muted">
-        <a href="{% url 'request_edit' post.pk %}">Edit</a> |
-        <a href="{% url 'request_delete' post.pk %}">Delete</a>
+        <a href="{% url 'request_edit' post.pk %}">Edit/View</a> |
+        <a href="{% url 'request_delete' post.pk %}">Fulfill</a>
       </div>
     </div>
     <br />

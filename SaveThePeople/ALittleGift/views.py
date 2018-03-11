@@ -7,10 +7,12 @@ from . import models
 
 
 
+
+
 class PostCreateView(CreateView):
     model = models.Request
     template_name = 'request_new.html'
-    fields = ['message', 'author', 'location']
+    fields = ['message', 'author', 'city', 'location']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -28,10 +30,11 @@ class PostDetailView(DetailView):
 
 class PostUpdateView(UpdateView):
     model = models.Request
-    fields = ['message']
     template_name = 'request_edit.html'
+    fields = ['message', 'location']
+
 
 class PostDeleteView(DeleteView):
     model = models.Request
-    template_name = 'request_delete.html'
+    template_name = 'request_fulfill.html'
     success_url = reverse_lazy('request_list')

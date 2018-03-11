@@ -15,7 +15,7 @@ class Dogooders(models.Model):
 class Request(models.Model):
     message = models.CharField(max_length=30000)
     date = models.DateTimeField(auto_now_add=True)
-
+    city = models.CharField(max_length=300)
     location = GeopositionField(blank=True)
 
     author = models.ForeignKey(

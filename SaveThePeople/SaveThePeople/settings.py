@@ -138,3 +138,12 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+GEOPOSITION_MARKER_OPTIONS = {
+    'cursor': 'move'
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+}

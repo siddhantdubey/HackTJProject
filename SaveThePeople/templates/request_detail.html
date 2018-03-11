@@ -2,11 +2,18 @@
 
 {% block content %}
 <div class="post-entry">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<form method="POST" action="">{% csrf_token %}
+    {{ form.media }}
+    {{ form.as_p }}
+</form>
   <h2>{{ object.message }}</h2>
     <p>Author: {{ object.author }}</p>
     <p>{{ object.date }}</p>
+    <p>  {{object.location}} </p>
   </div>
 
-  <p><a href="{% url 'request_edit' post.pk %}">Edit</a> | <a href="{% url 'request_delete' post.pk %}">Delete</a></p> 
-  <p>Back to <a href="{% url 'request_list' %}">All Messages</a>.</p>
+  <p><a href="{% url 'request_edit' request.pk %}">Edit</a> | <a href="{% url 'request_delete' request.pk %}">Delete</a></p>
+  <p>Back to <a href="{% url 'request_list' %}">All Requests</a>.</p>
+
 {% endblock content %}
