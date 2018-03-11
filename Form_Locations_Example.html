@@ -24,6 +24,7 @@
       <tr><td>Name:</td> <td><input type='text' id='name'/> </td> </tr>
       <tr><td>Description:</td> <td><input type='text' id='description'/> </td> </tr>
 	  <tr><td></td><td><input type='button' value='Save' onclick='saveData()'/></td></tr>
+	  <tr><td></td><td><input onclick="DeleteMarker(marker.id);" type=button value="Fufilled!"></td></tr>
       </table>
     </div>
     <div id="message">Location saved</div>
@@ -33,6 +34,11 @@
       var infowindow;
       var messagewindow;
 
+	  var markers = [];
+   	  var uniqueId = 1;
+   	  
+   	  
+   	  
       function initMap() {
         var california = {lat: 38.8183519, lng: -77.1687977};
         map = new google.maps.Map(document.getElementById('map'), {
@@ -53,14 +59,31 @@
             position: event.latLng,
             map: map
           });
-
+          
+		  marker.id = uniqueId;
+          uniqueId++;
 
           google.maps.event.addListener(marker, 'click', function() {
             infowindow.open(map, marker);
           });
+          
+          markers.push(marker);
+
         });
       }
-
+	  function DeleteMarker(id) {
+        //Find and remove the marker from the Array
+        for (var i = 0; i < markers.length; i++) {
+            if (markers[i].id == id) {
+                //Remove the marker from Map                  
+                markers[i].setMap(null);
+ 
+                //Remove the marker from array.
+                markers.splice(i, 1);
+                return;
+            }
+        }
+    };
       function saveData() {
         var name = escape(document.getElementById('name').value);
         var description = escape(document.getElementById('description').value);
