@@ -1,0 +1,25 @@
+body { 
+	background-color: c4f1ff;
+	}
+
+h1 {
+	font-family: times new roman;
+	text-align: center;
+	font-size: 36px
+	font-color: ffffff;
+	}
+h2 {
+	font-family: times new roman;
+	text-align: center;
+	font-size: 24px
+	}
+			
+p {
+	font-family: times new roman;
+	font-size: 18px;
+	}
+	
+normal_text {
+	font-family: times new roman;
+	font-size: 18px;
+	}
